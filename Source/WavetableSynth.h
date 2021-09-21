@@ -1,6 +1,8 @@
 #pragma once
 #include <JuceHeader.h>
 
+#include "WavetableOscillator.h"
+
 class WavetableSynth
 {
 public:
@@ -13,5 +15,6 @@ private:
 
 	double sampleRate;
 	int samplesPerBlock;
+	std::vector<WavetableOscillator> oscillators;
 };
 

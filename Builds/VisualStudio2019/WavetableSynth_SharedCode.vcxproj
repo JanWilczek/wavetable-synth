@@ -2118,8 +2118,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_graphics.cpp" />
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_basics.cpp" />
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp" />
+    <ClCompile Include="..\..\Source\WavetableOscillator.cpp" />
     <ClCompile Include="..\..\Source\WavetableSynth.cpp" />
-    <ClCompile Include="WavetableOscillator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\PluginProcessor.h" />

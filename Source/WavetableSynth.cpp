@@ -1,9 +1,31 @@
 #include "WavetableSynth.h"
+#include <cmath>
+
+void WavetableSynth::initializeOscillators()
+{
+	oscillators.clear();
+	constexpr auto OSCILLATOR_COUNT = 200;
+	constexpr auto WAVETABLE_LENGTH = 64;
+	const auto PI = std::atanf(1.f) * 4;
+	std::vector<float> sineWaveTable(WAVETABLE_LENGTH);
+
+	for (auto i = 0; i < WAVETABLE_LENGTH; ++i)
+	{
+		sineWaveTable[i] = std::sinf(2 * PI * i / WAVETABLE_LENGTH);
+	}
+
+	for (auto i = 0; i < OSCILLATOR_COUNT; ++i)
+	{
+		oscillators.emplace_back(sineWaveTable, sampleRate);
+	}
+}
 
 void WavetableSynth::prepareToPlay(double sampleRate, int samplesPerBlock)
 {
     this->sampleRate = sampleRate;
     this->samplesPerBlock = samplesPerBlock;
+
+    initializeOscillators();
 }
 
 void WavetableSynth::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)

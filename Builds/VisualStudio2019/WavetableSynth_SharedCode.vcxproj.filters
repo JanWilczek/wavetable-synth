@@ -2469,7 +2469,7 @@
     <ClCompile Include="..\..\Source\WavetableSynth.cpp">
       <Filter>WavetableSynth\Source</Filter>
     </ClCompile>
-    <ClCompile Include="WavetableOscillator.cpp">
+    <ClCompile Include="..\..\Source\WavetableOscillator.cpp">
       <Filter>WavetableSynth\Source</Filter>
     </ClCompile>
   </ItemGroup>
