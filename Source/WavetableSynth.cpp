@@ -10,13 +10,37 @@ void WavetableSynth::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
 {
     auto currentSample = 0;
 
-    for (auto& midiMessage : midiMessages)
+    for (const auto midiMetadata : midiMessages)
     {
-        handleMidiEvent(midiMessage);
+        const auto message = midiMetadata.getMessage();
+        const int messagePosition = static_cast<int>(message.getTimeStamp());
 
-        render(buffer, currentSample, midiMessage.getTimeStamp());
+        render(buffer, currentSample, messagePosition);
+        currentSample = messagePosition;
+        handleMidiEvent(message);
     }
 
+    render(buffer, currentSample, buffer.getNumSamples());
+}
+
+void WavetableSynth::handleMidiEvent(const juce::MidiMessage& midiMessage)
+{
+    if (midiMessage.isNoteOn())
+    {
+	    
+    }
+    else if (midiMessage.isNoteOff())
+    {
+	    
+    }
+    else if (midiMessage.isAllNotesOff())
+    {
+	    
+    }
+}
+
+void WavetableSynth::render(juce::AudioBuffer<float>& buffer, int beginSample, int endSample)
+{
     for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
     {
         auto* channelData = buffer.getWritePointer(channel);
@@ -24,3 +48,4 @@ void WavetableSynth::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBu
         // ..do something to the data...
     }
 }
+

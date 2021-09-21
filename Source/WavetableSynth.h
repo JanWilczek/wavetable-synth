@@ -4,13 +4,12 @@
 class WavetableSynth
 {
 public:
-	WavetableSynth();
-
 	void prepareToPlay(double sampleRate, int samplesPerBlock);
 	void processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages);
 
 private:
-	void handleMidiEvent(juce::MidiMessage& midiMessage, juce::AudioBuffer<float>& buffer);
+	void handleMidiEvent(const juce::MidiMessage& midiMessage);
+	void render(juce::AudioBuffer<float>& buffer, int beginSample, int endSample);
 
 	double sampleRate;
 	int samplesPerBlock;
