@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "WavetableSynth.h"
 
 //==============================================================================
 /**
@@ -55,5 +56,6 @@ public:
 
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (WavetableSynthAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(WavetableSynthAudioProcessor)
+    WavetableSynth synth;
 };
