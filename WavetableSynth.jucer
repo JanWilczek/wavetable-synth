@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="SKHC2k" name="WavetableSynth" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="WolfSound" companyWebsite="www.thewolfsound.com"
+              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn"
+              cppLanguageStandard="17">
+  <MAINGROUP id="r7WWLI" name="WavetableSynth">
+    <GROUP id="{6E83BEC9-D5FA-2F86-4BD3-69F5116491F0}" name="Source">
+      <FILE id="bs6xp4" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="CCIUxr" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="aDEOJk" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="lDCfYq" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="WavetableSynth"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="WavetableSynth"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../Programy/Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Programy/Libraries/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
