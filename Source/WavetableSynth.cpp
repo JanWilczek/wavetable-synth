@@ -49,25 +49,42 @@ void WavetableSynth::handleMidiEvent(const juce::MidiMessage& midiMessage)
 {
     if (midiMessage.isNoteOn())
     {
-	    
+        const auto oscillatorId = midiMessage.getNoteNumber();
+        const auto frequency = 440.f * std::powf(2, oscillatorId / 69.f);
+        oscillators[oscillatorId].setFrequency(frequency);
     }
     else if (midiMessage.isNoteOff())
     {
-	    
+        const auto oscillatorId = midiMessage.getNoteNumber();
+        oscillators[oscillatorId].stop();
     }
     else if (midiMessage.isAllNotesOff())
     {
-	    
+	    for (auto& oscillator : oscillators)
+	    {
+            oscillator.stop();
+	    }
     }
 }
 
 void WavetableSynth::render(juce::AudioBuffer<float>& buffer, int beginSample, int endSample)
 {
-    for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+    auto* firstChannel = buffer.getWritePointer(0);
+    for (auto& oscillator : oscillators)
+    {
+        if (oscillator.isPlaying())
+        {
+		    for (auto sample = beginSample; sample < endSample; ++sample)
+		    {
+                firstChannel[sample] = oscillator.getSample();
+		    }
+        }
+    }
+
+    for (int channel = 1; channel < buffer.getNumChannels(); ++channel)
     {
         auto* channelData = buffer.getWritePointer(channel);
-
-        // ..do something to the data...
+        std::copy(firstChannel + beginSample, firstChannel + endSample, channelData + beginSample);
     }
 }
 

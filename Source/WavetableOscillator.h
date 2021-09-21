@@ -5,6 +5,10 @@ class WavetableOscillator
 {
 public:
 	WavetableOscillator(std::vector<float> waveTable, double sampleRate);
+	WavetableOscillator(const WavetableOscillator&) = delete;
+	WavetableOscillator& operator=(const WavetableOscillator&) = delete;
+	WavetableOscillator(WavetableOscillator&&) = default;
+	WavetableOscillator& operator=(WavetableOscillator&&) = default;
 
 	float getSample();
 	void setFrequency(float frequency);

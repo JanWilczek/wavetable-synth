@@ -46,7 +46,7 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="10" x="0.25" y="0.9" DPIAware="">
+  <FILTER uid="10" x="0.6274999999999999" y="0.8941176470588236" DPIAware="">
     <PLUGIN name="MIDI Output" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="9d5bbb00" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
@@ -61,10 +61,11 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="11" x="0.3575" y="0.4205882352941177" DPIAware="">
+  <FILTER uid="11" x="0.3575" y="0.4205882352941177" DPIAware="" uiLastX_Normal="758"
+          uiLastY_Normal="199" uiopen_Normal="0">
     <PLUGIN name="WavetableSynth" format="VST3" category="Instrument|Synth"
             manufacturer="WolfSound" version="1.0.0" file="D:\IT\JUCEprojects\WavetableSynth\Builds\VisualStudio2019\x64\Release\VST3\WavetableSynth.vst3"
-            uid="e959d278" isInstrument="1" fileTime="17c07b91519" infoUpdateTime="17c07bb6b1c"
+            uid="e959d278" isInstrument="1" fileTime="17c07b91519" infoUpdateTime="17c086e3c09"
             numInputs="0" numOutputs="2" isShell="0"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
     <LAYOUT>
