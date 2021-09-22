@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FILTERGRAPH>
-  <FILTER uid="7" x="0.5" y="0.1" DPIAware="">
+  <FILTER uid="7" x="0.5" y="0.1" DPIAware="0.0">
     <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="246006c0" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="2"
@@ -16,7 +16,7 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="8" x="0.25" y="0.1" DPIAware="">
+  <FILTER uid="8" x="0.28375" y="0.08529411764705883" DPIAware="0.0">
     <PLUGIN name="MIDI Input" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="a9e4f9eb" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
@@ -31,7 +31,7 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="9" x="0.5" y="0.9" DPIAware="">
+  <FILTER uid="9" x="0.5" y="0.9" DPIAware="0.0">
     <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="724248cb" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="2" numOutputs="0"
@@ -46,7 +46,7 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="10" x="0.6274999999999999" y="0.8941176470588236" DPIAware="">
+  <FILTER uid="10" x="0.6274999999999999" y="0.8941176470588236" DPIAware="0.0">
     <PLUGIN name="MIDI Output" descriptiveName="" format="Internal" category="I/O devices"
             manufacturer="JUCE" version="1.0" file="" uid="9d5bbb00" isInstrument="0"
             fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
@@ -61,11 +61,10 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <FILTER uid="11" x="0.3575" y="0.4205882352941177" DPIAware="" uiLastX_Normal="758"
-          uiLastY_Normal="199" uiopen_Normal="0">
+  <FILTER uid="13" x="0.56375" y="0.5044117647058823" DPIAware="">
     <PLUGIN name="WavetableSynth" format="VST3" category="Instrument|Synth"
-            manufacturer="WolfSound" version="1.0.0" file="D:\IT\JUCEprojects\WavetableSynth\Builds\VisualStudio2019\x64\Release\VST3\WavetableSynth.vst3"
-            uid="e959d278" isInstrument="1" fileTime="17c07b91519" infoUpdateTime="17c086e3c09"
+            manufacturer="WolfSound" version="1.0.0" file="D:\IT\JUCEprojects\WavetableSynth\Builds\VisualStudio2019\x64\Debug\VST3\WavetableSynth.vst3"
+            uid="e959d278" isInstrument="1" fileTime="17c0c072681" infoUpdateTime="17c0c0e80b0"
             numInputs="0" numOutputs="2" isShell="0"/>
     <STATE>191.VMjLgXK....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9XCLt3hKt3hKt3hKt3hYRUUSTEETIckVwTjQisVTTgkdEYjKAQjYPQSPWgUdMcjKAQjct3hdA4hKt3hKt3hKtnTUv.UQAslXuk0UXoWUFE0YQcEV77RRC8Vav8lak4Fc9vyKVMEUy.Ea0cVZtMEcgQWY9..</STATE>
     <LAYOUT>
@@ -75,8 +74,8 @@
       </OUTPUTS>
     </LAYOUT>
   </FILTER>
-  <CONNECTION srcFilter="8" srcChannel="4096" dstFilter="11" dstChannel="4096"/>
-  <CONNECTION srcFilter="11" srcChannel="0" dstFilter="9" dstChannel="0"/>
-  <CONNECTION srcFilter="11" srcChannel="1" dstFilter="9" dstChannel="1"/>
-  <CONNECTION srcFilter="11" srcChannel="4096" dstFilter="10" dstChannel="4096"/>
+  <CONNECTION srcFilter="8" srcChannel="4096" dstFilter="13" dstChannel="4096"/>
+  <CONNECTION srcFilter="13" srcChannel="0" dstFilter="9" dstChannel="0"/>
+  <CONNECTION srcFilter="13" srcChannel="1" dstFilter="9" dstChannel="1"/>
+  <CONNECTION srcFilter="13" srcChannel="4096" dstFilter="10" dstChannel="4096"/>
 </FILTERGRAPH>

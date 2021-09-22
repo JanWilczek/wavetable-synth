@@ -12,8 +12,7 @@ float WavetableOscillator::getSample()
 	jassert(isPlaying());
 	index += indexIncrement;
 	index = std::fmod(index, static_cast<float>(waveTable.size()));
-	const auto truncatedIndex = static_cast<int>(index);
-	return waveTable[truncatedIndex];
+	return interpolateLinearly();
 }
 
 void WavetableOscillator::setFrequency(float frequency)
@@ -32,4 +31,11 @@ bool WavetableOscillator::isPlaying() const
 	return indexIncrement != 0.f;
 }
 
+float WavetableOscillator::interpolateLinearly()
+{
+	const auto truncatedIndex = static_cast<typename  decltype(waveTable)::size_type>(index);
+	const auto nextIndex = static_cast<typename  decltype(waveTable)::size_type>(std::ceil(index)) % waveTable.size();
+	const auto nextIndexWeight = index - static_cast<float>(truncatedIndex);
+	return waveTable[nextIndex] * nextIndexWeight + (1.f - nextIndexWeight) * waveTable[truncatedIndex];
+}
 

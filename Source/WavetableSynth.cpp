@@ -11,7 +11,7 @@ void WavetableSynth::initializeOscillators()
 
 	for (auto i = 0; i < WAVETABLE_LENGTH; ++i)
 	{
-		sineWaveTable[i] = std::sinf(2 * PI * i / WAVETABLE_LENGTH);
+		sineWaveTable[i] = std::sinf(2 * PI * static_cast<float>(i) / WAVETABLE_LENGTH);
 	}
 
 	for (auto i = 0; i < OSCILLATOR_COUNT; ++i)
@@ -50,7 +50,7 @@ void WavetableSynth::handleMidiEvent(const juce::MidiMessage& midiMessage)
     if (midiMessage.isNoteOn())
     {
         const auto oscillatorId = midiMessage.getNoteNumber();
-        const auto frequency = 440.f * std::powf(2, oscillatorId / 69.f);
+        const auto frequency = 440.f * std::powf(2, (oscillatorId - 69.f) / 12.f);
         oscillators[oscillatorId].setFrequency(frequency);
     }
     else if (midiMessage.isNoteOff())
@@ -76,7 +76,7 @@ void WavetableSynth::render(juce::AudioBuffer<float>& buffer, int beginSample, i
         {
 		    for (auto sample = beginSample; sample < endSample; ++sample)
 		    {
-                firstChannel[sample] = oscillator.getSample();
+                firstChannel[sample] += oscillator.getSample();
 		    }
         }
     }

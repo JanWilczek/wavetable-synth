@@ -16,6 +16,8 @@ public:
 	bool isPlaying() const;
 
 private:
+	float interpolateLinearly();
+
 	float index = 0.f;
 	float indexIncrement = 0.f;
 	std::vector<float> waveTable;
