@@ -10,6 +10,7 @@ public:
 	void processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages);
 
 private:
+	static std::vector<float> generateSineWaveTable();
 	void initializeOscillators();
 	void handleMidiEvent(const juce::MidiMessage& midiMessage);
 	void render(juce::AudioBuffer<float>& buffer, int beginSample, int endSample);

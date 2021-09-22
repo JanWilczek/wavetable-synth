@@ -1,18 +1,24 @@
 #include "WavetableSynth.h"
-#include <cmath>
 
-void WavetableSynth::initializeOscillators()
+std::vector<float> WavetableSynth::generateSineWaveTable()
 {
-	oscillators.clear();
-	constexpr auto OSCILLATOR_COUNT = 200;
 	constexpr auto WAVETABLE_LENGTH = 64;
 	const auto PI = std::atanf(1.f) * 4;
-	std::vector<float> sineWaveTable(WAVETABLE_LENGTH);
+    std::vector<float> sineWaveTable = std::vector<float>(WAVETABLE_LENGTH);
 
 	for (auto i = 0; i < WAVETABLE_LENGTH; ++i)
 	{
 		sineWaveTable[i] = std::sinf(2 * PI * static_cast<float>(i) / WAVETABLE_LENGTH);
 	}
+
+    return sineWaveTable;
+}
+
+void WavetableSynth::initializeOscillators()
+{
+	oscillators.clear();
+	constexpr auto OSCILLATOR_COUNT = 200;
+	const auto sineWaveTable = generateSineWaveTable();
 
 	for (auto i = 0; i < OSCILLATOR_COUNT; ++i)
 	{

@@ -16,7 +16,7 @@ public:
 	bool isPlaying() const;
 
 private:
-	float interpolateLinearly();
+	float interpolateLinearly() const;
 
 	float index = 0.f;
 	float indexIncrement = 0.f;

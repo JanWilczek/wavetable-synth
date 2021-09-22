@@ -31,7 +31,7 @@ bool WavetableOscillator::isPlaying() const
 	return indexIncrement != 0.f;
 }
 
-float WavetableOscillator::interpolateLinearly()
+float WavetableOscillator::interpolateLinearly() const
 {
 	const auto truncatedIndex = static_cast<typename  decltype(waveTable)::size_type>(index);
 	const auto nextIndex = static_cast<typename  decltype(waveTable)::size_type>(std::ceil(index)) % waveTable.size();
