@@ -93,7 +93,7 @@ void WavetableSynthAudioProcessor::changeProgramName (int index, const juce::Str
 //==============================================================================
 void WavetableSynthAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    synth.prepareToPlay(sampleRate, samplesPerBlock);
+    synth.prepareToPlay(sampleRate);
 }
 
 void WavetableSynthAudioProcessor::releaseResources()
@@ -130,7 +130,7 @@ void WavetableSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
 {
     juce::ScopedNoDenormals noDenormals;
 
-	for (auto i = 0; i < buffer.getNumChannels(); ++i)
+    for (auto i = 0; i < buffer.getNumChannels(); ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
     synth.processBlock(buffer, midiMessages);
