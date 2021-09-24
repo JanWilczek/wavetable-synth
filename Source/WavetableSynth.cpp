@@ -41,7 +41,7 @@ void WavetableSynth::processBlock(juce::AudioBuffer<float>& buffer,
     for (const auto midiMetadata : midiMessages)
     {
         const auto message = midiMetadata.getMessage();
-        const int messagePosition = static_cast<int>(message.getTimeStamp());
+        const auto messagePosition = static_cast<int>(message.getTimeStamp());
 
         render(buffer, currentSample, messagePosition);
         currentSample = messagePosition;
