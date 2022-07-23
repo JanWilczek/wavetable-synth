@@ -84,6 +84,7 @@ void WavetableSynth::handleMidiEvent(const juce::MidiMessage& midiMessage)
 void WavetableSynth::render(juce::AudioBuffer<float>& buffer, int beginSample, int endSample)
 {
     auto* firstChannel = buffer.getWritePointer(0);
+    auto* secondChannel = buffer.getWritePointer(1);
     for (auto& oscillator : oscillators)
     {
         if (oscillator.isPlaying())
@@ -95,10 +96,7 @@ void WavetableSynth::render(juce::AudioBuffer<float>& buffer, int beginSample, i
         }
     }
 
-    for (int channel = 1; channel < buffer.getNumChannels(); ++channel)
-    {
-        auto* channelData = buffer.getWritePointer(channel);
-        std::copy(firstChannel + beginSample, firstChannel + endSample, channelData + beginSample);
-    }
+  
+        std::copy(firstChannel + beginSample, firstChannel + endSample, secondChannel + beginSample);
 }
 
